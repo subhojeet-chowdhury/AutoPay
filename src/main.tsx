@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Routes/Home";
 import ErrorPage from "./Components/ErrorPage";
 import LoginChoice from "./Routes/LoginChoice";
+import SignupChoice from "./Routes/SignupChoice";
+import LoginRider from "./Routes/LoginRider";
+import SignupRider from "./Routes/SignupRider";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,18 @@ const router = createBrowserRouter([
   {
     path: "/login-choice",
     element: <LoginChoice />,
+  },
+  {
+    path: "/signup-choice",
+    element: <SignupChoice />,
+  },
+  {
+    path: "/login-rider",
+    element: <LoginRider />,
+  },
+  {
+    path: "/signup-rider",
+    element: <SignupRider />,
   },
 ]);
 

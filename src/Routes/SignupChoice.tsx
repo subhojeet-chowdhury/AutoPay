@@ -1,10 +1,10 @@
 import { Flex, Button } from "@chakra-ui/react";
 import colors from "../colors";
 
-const LoginChoice = () => {
+const SignupChoice = () => {
   return (
     <Flex justifyContent="center" alignItems="center" height="100vh" gap={4}>
-      <a href="/login-rider">
+      <a href="/signup-rider">
         <Button
           backgroundColor={colors["blue"]}
           color={colors["white"]}
@@ -26,4 +26,4 @@ const LoginChoice = () => {
   );
 };
 
-export default LoginChoice;
+export default SignupChoice;

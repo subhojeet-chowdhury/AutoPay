@@ -20,7 +20,9 @@ const Home = () => {
             <a href="/login-choice">
               <Button color={colors["blue"]}>Login</Button>
             </a>
-            <Button color={colors["blue"]}>Signup</Button>
+            <a href="/signup-choice">
+              <Button color={colors["blue"]}>Signup</Button>
+            </a>
           </HStack>
         </HStack>
         <SimpleGrid

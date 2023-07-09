@@ -5,11 +5,18 @@ import { ChakraBaseProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Routes/Home";
+import ErrorPage from "./Components/ErrorPage";
+import LoginChoice from "./Routes/LoginChoice";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login-choice",
+    element: <LoginChoice />,
   },
 ]);
 

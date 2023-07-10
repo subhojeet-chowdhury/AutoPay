@@ -13,10 +13,10 @@ const PartnerStatistics = () => {
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard title={"Transactions"} stat={"40"} icon={<GrTransaction size={"2em"} />} />
-        <StatsCard title={"Earnings"} stat={"1200"} icon={<BsCash size={"2em"} />} />
+        <StatsCard title={"Earnings"} stat={"₹1200"} icon={<BsCash size={"2em"} />} />
         <StatsCard
           title={"Balance"}
-          stat={"4050"}
+          stat={"₹4050"}
           icon={<MdOutlineAccountBalanceWallet size={"2em"} />}
         />
       </SimpleGrid>

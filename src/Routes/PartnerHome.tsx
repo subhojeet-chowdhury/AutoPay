@@ -37,8 +37,8 @@ interface LinkItemProps {
 const LinkItems: Array<LinkItemProps> = [
   { name: "Home", icon: AiOutlineHome, path: "/partner/:id/home" },
   { name: "Profile", icon: AiOutlineProfile, path: "/partner/:id/profile" },
-  { name: "Withdraw", icon: BiMoneyWithdraw, path: "/rider/:id/withdraw" },
-  { name: "History", icon: AiOutlineHistory, path: "/rider/:id/history" },
+  { name: "Withdraw", icon: BiMoneyWithdraw, path: "/partner/:id/withdraw" },
+  { name: "History", icon: AiOutlineHistory, path: "/partner/:id/history" },
   { name: "Signout", icon: GoSignOut, path: "/" },
 ];
 

@@ -55,15 +55,18 @@ export default function VerifyNumber(): JSX.Element {
           </Center>
         </FormControl>
         <Stack spacing={6}>
-          <Button
-            bg={"blue.400"}
-            color={"white"}
-            _hover={{
-              bg: "blue.500",
-            }}
-          >
-            <a href="/partner/:id/home">Verify</a>
-          </Button>
+          <a href="/partner/:id/home">
+            <Button
+              bg={"blue.400"}
+              color={"white"}
+              _hover={{
+                bg: "blue.500",
+              }}
+              width={"100%"}
+            >
+              Verify
+            </Button>
+          </a>
         </Stack>
       </Stack>
     </Flex>

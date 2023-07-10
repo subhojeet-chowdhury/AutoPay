@@ -54,6 +54,7 @@ const LoginRider = () => {
                   _hover={{
                     bg: "blue.500",
                   }}
+                  width={"100%"}
                 >
                   Sign in
                 </Button>

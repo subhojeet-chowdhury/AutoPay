@@ -5,6 +5,7 @@ import colors from "../colors";
 import FeatureCard from "../Components/FeatureCard";
 import { cards } from "../data/cards";
 import Accordions from "../Components/Accordions";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   return (
@@ -64,6 +65,7 @@ const Home = () => {
         </Heading>
         <Accordions />
       </Flex>
+      <Footer />
     </div>
   );
 };

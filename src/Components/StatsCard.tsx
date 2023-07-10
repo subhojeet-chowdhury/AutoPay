@@ -23,7 +23,7 @@ const StatsCard = (props: StatsCardProps) => {
             {title}
           </StatLabel>
           <StatNumber fontSize={"2xl"} fontWeight={"medium"}>
-            ₹{stat}
+            {stat}
           </StatNumber>
         </Box>
         <Box my={"auto"} color={useColorModeValue("gray.800", "gray.200")} alignContent={"center"}>

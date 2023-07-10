@@ -16,6 +16,7 @@ import LoginPartner from "./Routes/LoginPartner";
 import PartnerHome from "./Routes/PartnerHome";
 import Animation from "./Routes/Animation";
 import PartnerHomeMain from "./Components/PartnerHomeMain";
+import PartnerProfile from "./Components/PartnerProfile";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,14 @@ const router = createBrowserRouter([
     element: (
       <PartnerHome>
         <PartnerHomeMain />
+      </PartnerHome>
+    ),
+  },
+  {
+    path: "/partner/:id/profile",
+    element: (
+      <PartnerHome>
+        <PartnerProfile />
       </PartnerHome>
     ),
   },

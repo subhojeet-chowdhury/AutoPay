@@ -41,6 +41,9 @@ const Home = () => {
             <Button color={colors["blue"]}>
               <a href="/animation">Watch animation</a>
             </Button>
+            <Button color={colors["blue"]} ml={3}>
+              <a href="/documentaion">View document</a>
+            </Button>
           </Box>
 
           <Box>

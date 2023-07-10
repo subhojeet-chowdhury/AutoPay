@@ -17,6 +17,7 @@ import PartnerHome from "./Routes/PartnerHome";
 import Animation from "./Routes/Animation";
 import PartnerHomeMain from "./Components/PartnerHomeMain";
 import PartnerProfile from "./Components/PartnerProfile";
+import Document from "./Routes/Document";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,7 @@ const router = createBrowserRouter([
     ),
   },
   { path: "/animation", element: <Animation /> },
+  { path: "/documentaion", element: <Document /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

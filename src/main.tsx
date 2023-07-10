@@ -78,10 +78,10 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <>
+  <React.StrictMode>
     <ChakraBaseProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <RouterProvider router={router} />
     </ChakraBaseProvider>
-  </>
+  </React.StrictMode>
 );

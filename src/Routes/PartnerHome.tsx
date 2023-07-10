@@ -20,8 +20,9 @@ import {
   Image,
   Button,
 } from "@chakra-ui/react";
-import { FiSettings, FiMenu } from "react-icons/fi";
-import { AiOutlineProfile, AiOutlineHistory, AiOutlineHome } from "react-icons/ai";
+import { FiMenu } from "react-icons/fi";
+import { AiOutlineProfile, AiOutlineHome, AiOutlineHistory } from "react-icons/ai";
+import { BiMoneyWithdraw } from "react-icons/bi";
 import { GoSignOut } from "react-icons/go";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
@@ -34,10 +35,10 @@ interface LinkItemProps {
   path: String;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Home", icon: AiOutlineHome, path: "/rider/:id/home" },
-  { name: "Profile", icon: AiOutlineProfile, path: "/rider/:id/profile" },
+  { name: "Home", icon: AiOutlineHome, path: "/partner/:id/home" },
+  { name: "Profile", icon: AiOutlineProfile, path: "/partner/:id/profile" },
+  { name: "Withdraw", icon: BiMoneyWithdraw, path: "/rider/:id/withdraw" },
   { name: "History", icon: AiOutlineHistory, path: "/rider/:id/history" },
-  { name: "Settings", icon: FiSettings, path: "/rider/:id/settings" },
   { name: "Signout", icon: GoSignOut, path: "/" },
 ];
 
@@ -93,12 +94,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </a>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      <Flex
-        flexDirection={"column"}
-        textAlign={"left"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
+      <Flex flexDirection={"column"} textAlign={"left"} justifyContent={"center"} ml={6}>
         {LinkItems.map((link) => (
           <a key={link.name} href={link.path as string}>
             <Button

@@ -25,7 +25,7 @@ export const cards = [
   },
 ];
 
-export const items = [
+export const features = [
   {
     id: 1,
     name: "Seamless and Convenient Payments",

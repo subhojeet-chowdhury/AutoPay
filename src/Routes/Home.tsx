@@ -3,8 +3,9 @@ import logo from "../assets/logo-white.png";
 import card from "../assets/card.png";
 import colors from "../colors";
 import FeatureCard from "../Components/FeatureCard";
-import { items, cards } from "../data/cards";
-import CharacteristicCard from "../Components/CharacteristicCard";
+import { cards } from "../data/cards";
+import Accordions from "../Components/Accordions";
+
 const Home = () => {
   return (
     <div>
@@ -59,9 +60,7 @@ const Home = () => {
         <Heading size={"2xl"} py={5} color={colors["white"]} textAlign="center">
           Our key Characteristics
         </Heading>
-        {items.map((item) => (
-          <CharacteristicCard key={item.id} item={item} />
-        ))}
+        <Accordions />
       </Flex>
     </div>
   );

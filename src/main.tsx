@@ -7,11 +7,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Routes/Home";
 import ErrorPage from "./Components/ErrorPage";
 import LoginChoice from "./Routes/LoginChoice";
-import SignupChoice from "./Routes/SignupChoice";
 import LoginRider from "./Routes/LoginRider";
 import SignupRider from "./Routes/SignupRider";
 import RiderHome from "./Routes/RiderHome";
 import RiderHomeMain from "./Components/RiderHomeMain";
+import RiderProfile from "./Components/RiderProfile";
+import LoginPartner from "./Routes/LoginPartner";
+import PartnerHome from "./Routes/PartnerHome";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +26,7 @@ const router = createBrowserRouter([
     element: <LoginChoice />,
   },
   {
-    path: "/signup-choice",
-    element: <SignupChoice />,
-  },
-  {
-    path: "/login-rider",
+    path: "/rider",
     element: <LoginRider />,
   },
   {
@@ -36,12 +34,28 @@ const router = createBrowserRouter([
     element: <SignupRider />,
   },
   {
-    path: "/rider-home",
+    path: "/rider/:id/home",
     element: (
       <RiderHome>
         <RiderHomeMain />
       </RiderHome>
     ),
+  },
+  {
+    path: "/rider/:id/profile",
+    element: (
+      <RiderHome>
+        <RiderProfile />
+      </RiderHome>
+    ),
+  },
+  {
+    path: "/partner",
+    element: <LoginPartner />,
+  },
+  {
+    path: "/partner/:id/home",
+    element: <PartnerHome>Home</PartnerHome>,
   },
 ]);
 

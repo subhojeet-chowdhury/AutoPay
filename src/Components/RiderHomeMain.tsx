@@ -6,7 +6,7 @@ import transactions from "../data/transactions";
 
 const RiderHomeMain = () => {
   return (
-    <Box padding={5}>
+    <Box padding={8}>
       <Flex gap={10}>
         <RiderCard name={"subhojeet chowdhury"} balance={"1000"} />
         <BasicStatistics />

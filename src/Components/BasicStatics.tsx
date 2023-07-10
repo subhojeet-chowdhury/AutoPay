@@ -11,12 +11,12 @@ const BasicStatistics = () => {
         Today's stats
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-        <StatsCard title={"Transactions"} stat={"5"} icon={<GrTransaction size={"3em"} />} />
-        <StatsCard title={"Expenses"} stat={"125"} icon={<GiExpense size={"3em"} />} />
+        <StatsCard title={"Transactions"} stat={"5"} icon={<GrTransaction size={"2em"} />} />
+        <StatsCard title={"Expenses"} stat={"125"} icon={<GiExpense size={"2em"} />} />
         <StatsCard
           title={"Balance"}
           stat={"1,000"}
-          icon={<MdOutlineAccountBalanceWallet size={"3em"} />}
+          icon={<MdOutlineAccountBalanceWallet size={"2em"} />}
         />
       </SimpleGrid>
     </Box>

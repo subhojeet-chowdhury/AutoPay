@@ -85,7 +85,7 @@ const SignupRider = () => {
                   bg: "blue.500",
                 }}
               >
-                Sign up
+                <a href="/rider/:id/home">Sign up</a>
               </Button>
             </Stack>
             <Stack pt={6}>

@@ -6,7 +6,6 @@ import {
   CloseButton,
   Flex,
   HStack,
-  VStack,
   Icon,
   useColorModeValue,
   Link,
@@ -23,7 +22,6 @@ import {
 } from "@chakra-ui/react";
 import { FiSettings, FiMenu } from "react-icons/fi";
 import { AiOutlineProfile, AiOutlineHistory, AiOutlineHome } from "react-icons/ai";
-import { BsFillPersonFill } from "react-icons/bs";
 import { GoSignOut } from "react-icons/go";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
@@ -43,7 +41,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Signout", icon: GoSignOut, path: "/" },
 ];
 
-const RiderHome = ({ children }: { children: ReactNode }) => {
+const PartnerHome = ({ children }: { children: ReactNode }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
@@ -208,4 +206,4 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   );
 };
 
-export default RiderHome;
+export default PartnerHome;

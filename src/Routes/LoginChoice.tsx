@@ -4,7 +4,7 @@ import colors from "../colors";
 const LoginChoice = () => {
   return (
     <Flex justifyContent="center" alignItems="center" height="100vh" gap={4}>
-      <a href="/login-rider">
+      <a href="/rider">
         <Button
           backgroundColor={colors["blue"]}
           color={colors["white"]}
@@ -13,7 +13,7 @@ const LoginChoice = () => {
           I'm a Smart Rider
         </Button>
       </a>
-      <a href="/">
+      <a href="/partner">
         <Button
           backgroundColor={colors["blue"]}
           color={colors["white"]}

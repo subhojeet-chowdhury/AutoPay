@@ -20,8 +20,8 @@ const Home = () => {
             <a href="/login-choice">
               <Button color={colors["blue"]}>Login</Button>
             </a>
-            <a href="/signup-choice">
-              <Button color={colors["blue"]}>Signup</Button>
+            <a href="/signup-rider">
+              <Button color={colors["blue"]}>Rider Signup</Button>
             </a>
           </HStack>
         </HStack>

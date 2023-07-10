@@ -10,6 +10,7 @@ import LoginChoice from "./Routes/LoginChoice";
 import SignupChoice from "./Routes/SignupChoice";
 import LoginRider from "./Routes/LoginRider";
 import SignupRider from "./Routes/SignupRider";
+import RiderHome from "./Routes/RiderHome";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/signup-rider",
     element: <SignupRider />,
+  },
+  {
+    path: "/rider-home",
+    element: <RiderHome>hello</RiderHome>,
   },
 ]);
 

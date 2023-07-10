@@ -21,7 +21,6 @@ const LoginRider = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [values, setValues] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -29,7 +28,7 @@ const LoginRider = () => {
   const [disable, setDisable] = useState(false);
 
   const handleSubmit = () => {
-    if (!values.name || !values.email || !values.password) {
+    if (!values.email || !values.password) {
       setError("Please fill all the fields");
       return;
     }

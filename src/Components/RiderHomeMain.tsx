@@ -1,6 +1,6 @@
 import { Flex, Heading, Box } from "@chakra-ui/react";
 import RiderCard from "./RiderCard";
-import BasicStatistics from "./BasicStatics";
+import RiderStatictics from "./RiderStatistics";
 import Transactions from "./Transactions";
 import transactions from "../data/transactions";
 
@@ -9,7 +9,7 @@ const RiderHomeMain = () => {
     <Box padding={8}>
       <Flex gap={10}>
         <RiderCard name={"subhojeet chowdhury"} balance={"1000"} />
-        <BasicStatistics />
+        <RiderStatictics />
       </Flex>
       <Box py={10}>
         <Heading marginBottom={5}>Recent transactions</Heading>

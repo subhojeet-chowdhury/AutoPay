@@ -37,7 +37,9 @@ const Home = () => {
             <Text>Revolutionizing </Text>
             <Text>Autorickshaw Payments </Text>
             <Text>for a Smoother Ride</Text>
-            <Button color={colors["blue"]}>Learn more</Button>
+            <Button color={colors["blue"]}>
+              <a href="/animation">Watch animation</a>
+            </Button>
           </Box>
 
           <Box>

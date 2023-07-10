@@ -14,6 +14,8 @@ import RiderHomeMain from "./Components/RiderHomeMain";
 import RiderProfile from "./Components/RiderProfile";
 import LoginPartner from "./Routes/LoginPartner";
 import PartnerHome from "./Routes/PartnerHome";
+import Animation from "./Routes/Animation";
+import PartnerHomeMain from "./Components/PartnerHomeMain";
 
 const router = createBrowserRouter([
   {
@@ -55,8 +57,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/partner/:id/home",
-    element: <PartnerHome>Home</PartnerHome>,
+    element: (
+      <PartnerHome>
+        <PartnerHomeMain />
+      </PartnerHome>
+    ),
   },
+  { path: "/animation", element: <Animation /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

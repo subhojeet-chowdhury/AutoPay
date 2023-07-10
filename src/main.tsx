@@ -11,6 +11,7 @@ import SignupChoice from "./Routes/SignupChoice";
 import LoginRider from "./Routes/LoginRider";
 import SignupRider from "./Routes/SignupRider";
 import RiderHome from "./Routes/RiderHome";
+import RiderHomeMain from "./Components/RiderHomeMain";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/rider-home",
-    element: <RiderHome>hello</RiderHome>,
+    element: (
+      <RiderHome>
+        <RiderHomeMain />
+      </RiderHome>
+    ),
   },
 ]);
 

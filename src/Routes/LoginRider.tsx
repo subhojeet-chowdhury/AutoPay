@@ -12,8 +12,40 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase/firebase";
 
 const LoginRider = () => {
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [disable, setDisable] = useState(false);
+
+  const handleSubmit = () => {
+    if (!values.name || !values.email || !values.password) {
+      setError("Please fill all the fields");
+      return;
+    }
+    setError("");
+
+    setDisable(true);
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      .then(async (res) => {
+        setDisable(false);
+        navigate("/rider/:id/home");
+      })
+      .catch((err) => {
+        setDisable(false);
+        setError(err.message);
+      });
+  };
   return (
     <Flex
       minH={"100vh"}
@@ -47,6 +79,7 @@ const LoginRider = () => {
                 <Checkbox>Remember me</Checkbox>
                 <Link color={"blue.400"}>Forgot password?</Link>
               </Stack>
+              <Text color={"red"}>{error}</Text>
               <a href="/rider/:id/home">
                 <Button
                   bg={"blue.400"}
@@ -55,6 +88,7 @@ const LoginRider = () => {
                     bg: "blue.500",
                   }}
                   width={"100%"}
+                  disabled={disable}
                 >
                   Sign in
                 </Button>

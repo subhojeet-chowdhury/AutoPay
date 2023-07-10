@@ -85,14 +85,13 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <a href="/">
-          <HStack>
-            <Image src={logo} boxSize={12} />
-            <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" color={colors["blue"]}>
-              AutoPay
-            </Text>
-          </HStack>
-        </a>
+        <HStack>
+          <Image src={logo} boxSize={12} />
+          <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" color={colors["blue"]}>
+            AutoPay
+          </Text>
+        </HStack>
+
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       <Flex

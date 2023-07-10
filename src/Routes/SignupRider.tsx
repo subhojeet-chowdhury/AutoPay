@@ -17,9 +17,43 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 const SignupRider = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [disable, setDisable] = useState(false);
+
+  const handleSubmit = () => {
+    if (!values.name || !values.email || !values.password) {
+      setError("Please fill all the fields");
+      return;
+    }
+    setError("");
+
+    setDisable(true);
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then(async (res) => {
+        setDisable(false);
+        const user = res.user;
+        await updateProfile(user, {
+          displayName: values.name,
+        });
+        navigate("/rider/:id/home");
+      })
+      .catch((err) => {
+        setDisable(false);
+        setError(err.message);
+      });
+  };
 
   return (
     <Flex
@@ -40,27 +74,28 @@ const SignupRider = () => {
         <Box rounded={"lg"} bg={useColorModeValue("white", "gray.700")} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
             <HStack>
-              <Box>
-                <FormControl id="firstName" isRequired>
-                  <FormLabel>First Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
-              <Box>
-                <FormControl id="lastName">
-                  <FormLabel>Last Name</FormLabel>
-                  <Input type="text" />
-                </FormControl>
-              </Box>
+              <FormControl id="Username" isRequired>
+                <FormLabel>Username</FormLabel>
+                <Input
+                  type="text"
+                  onChange={(event) => setValues({ ...values, name: event.target.value })}
+                />
+              </FormControl>
             </HStack>
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input
+                type="email"
+                onChange={(event) => setValues({ ...values, email: event.target.value })}
+              />
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? "text" : "password"} />
+                <Input
+                  type={showPassword ? "text" : "password"}
+                  onChange={(event) => setValues({ ...values, password: event.target.value })}
+                />
                 <InputRightElement h={"full"}>
                   <Button
                     variant={"ghost"}
@@ -76,6 +111,7 @@ const SignupRider = () => {
               </InputGroup>
             </FormControl>
             <Stack spacing={10} pt={2}>
+              <Text color={"red"}>{error}</Text>
               <Button
                 loadingText="Submitting"
                 size="lg"
@@ -84,8 +120,10 @@ const SignupRider = () => {
                 _hover={{
                   bg: "blue.500",
                 }}
+                onClick={handleSubmit}
+                disabled={disable}
               >
-                <a href="/rider/:id/home">Sign up</a>
+                Sign up
               </Button>
             </Stack>
             <Stack pt={6}>

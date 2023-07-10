@@ -34,10 +34,6 @@ const router = createBrowserRouter([
     element: <LoginRider />,
   },
   {
-    path: "/signup-rider",
-    element: <SignupRider />,
-  },
-  {
     path: "/rider/:id/home",
     element: (
       <RiderHome>
@@ -52,6 +48,10 @@ const router = createBrowserRouter([
         <RiderProfile />
       </RiderHome>
     ),
+  },
+  {
+    path: "/signup-rider",
+    element: <SignupRider />,
   },
   {
     path: "/partner",
@@ -78,10 +78,10 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+  <>
     <ChakraBaseProvider theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <RouterProvider router={router} />
     </ChakraBaseProvider>
-  </React.StrictMode>
+  </>
 );

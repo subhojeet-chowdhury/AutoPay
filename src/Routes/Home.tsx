@@ -13,7 +13,7 @@ const Home = () => {
       <Box backgroundColor={colors["blue"]}>
         <HStack justifyContent="space-between" padding={8}>
           <HStack>
-            <Image src={logo} boxSize={50} />
+            <Image src={logo} boxSize={55} />
             <Text fontSize="2xl" color={colors["white"]} fontWeight="bold">
               AutoPay
             </Text>

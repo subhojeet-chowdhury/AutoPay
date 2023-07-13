@@ -2,7 +2,7 @@ import { Accordion, AccordionItem, AccordionButton, Flex, Text } from "@chakra-u
 import Transaction from "./Transaction";
 
 export interface TransactionProps {
-  id: Number;
+  id: string;
   to: String;
   route: String;
   amount: String;
@@ -19,7 +19,7 @@ const Transactions = ({ transactions }: Props) => {
     <Flex>
       <Accordion allowMultiple width="100%" bg="white" rounded="lg">
         {transactions.map((transaction: TransactionProps) => (
-          <Transaction transaction={transaction} />
+          <Transaction key={transaction.id} transaction={transaction} />
         ))}
       </Accordion>
     </Flex>

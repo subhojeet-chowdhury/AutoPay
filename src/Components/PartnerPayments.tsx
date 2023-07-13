@@ -1,15 +1,6 @@
 import { Accordion, AccordionItem, AccordionButton, Flex, Text } from "@chakra-ui/react";
-import Transaction from "./Transaction";
-import PartnerPayment from "./RiderPayment";
-
-export interface TransactionProps {
-  id: Number;
-  to: String;
-  route: String;
-  amount: String;
-  date: String;
-  time: String;
-}
+import PartnerPayment from "./PartnerPayment";
+import { TransactionProps } from "./Transactions";
 
 interface Props {
   transactions: TransactionProps[];
@@ -20,7 +11,7 @@ const PartnerPayments = ({ transactions }: Props) => {
     <Flex>
       <Accordion allowMultiple width="100%" bg="white" rounded="lg">
         {transactions.map((transaction: TransactionProps) => (
-          <PartnerPayment transaction={transaction} />
+          <PartnerPayment key={transaction.id} transaction={transaction} />
         ))}
       </Accordion>
     </Flex>

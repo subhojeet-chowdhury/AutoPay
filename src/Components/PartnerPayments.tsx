@@ -11,7 +11,7 @@ const PartnerPayments = ({ transactions }: Props) => {
     <Flex>
       <Accordion allowMultiple width="100%" bg="white" rounded="lg">
         {transactions.map((transaction: TransactionProps) => (
-          <PartnerPayment key={transaction.id} transaction={transaction} />
+          <PartnerPayment transaction={transaction} />
         ))}
       </Accordion>
     </Flex>
